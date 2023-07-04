@@ -20,11 +20,11 @@ function App() {
       <Navbar />
       <br/>
       <Routes>
-        <Route exact path="/seg3525-projet2" element={<Home />}/>
-        <Route path="/seg3525-projet2/Services" element={<Services />}/>
-        <Route path="/seg3525-projet2/Booking" element={<Booking />}/> 
-        <Route path="/seg3525-projet2/AccountLogin" element={<AccountLogin />}/>
-        <Route path="/seg3525-projet2/Account" element={<Account />}/>
+        <Route exact path="/seg3525-projet2-final" element={<Home />}/>
+        <Route path="/seg3525-projet2-final/Services" element={<Services />}/>
+        <Route path="/seg3525-projet2-final/Booking" element={<Booking />}/> 
+        <Route path="/seg3525-projet2-final/AccountLogin" element={<AccountLogin />}/>
+        <Route path="/seg3525-projet2-final/Account" element={<Account />}/>
       </Routes>
       <Footer />
     </div>

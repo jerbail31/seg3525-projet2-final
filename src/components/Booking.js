@@ -7,7 +7,7 @@ function Booking() {
   const navigate = useNavigate();
 
   const navServices = () => {
-    navigate('/seg3525-projet2/Services');
+    navigate('/seg3525-projet2-final/Services');
   };
 
   //for modal
@@ -15,7 +15,7 @@ function Booking() {
 
   const handleClose = () => {
     setShow(false);
-    navigate('/seg3525-projet2');
+    navigate('/seg3525-projet2-final');
   };
   const handleShow = () => {
     //add validation
@@ -23,7 +23,7 @@ function Booking() {
     setShow(true);
   };
   const handleMyAccount = () => {
-    navigate('/seg3525-projet2/Account');
+    navigate('/seg3525-projet2-final/Account');
   };
 
   const setPrice = () => {

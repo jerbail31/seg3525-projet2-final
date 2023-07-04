@@ -7,7 +7,7 @@ function AccountLogin() {
     const navigate = useNavigate();
     const loginClick = () => {
         //add validation
-        navigate('/seg3525-projet2/Account');
+        navigate('/seg3525-projet2-final/Account');
     };
 
     return (
