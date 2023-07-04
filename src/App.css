@@ -1,0 +1,386 @@
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*Header*/
+.header {
+  background-color: #3BB44B;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 30px;
+
+}
+
+.header-left {
+  font-size: 15px;
+}
+
+.header-item {
+  margin-right: 25px;
+  display: inline
+}
+
+.header-item :hover {
+  cursor: pointer;
+}
+
+.header-item span {
+  padding-left: 5px;
+}
+
+.header-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav ul li {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.header-nav ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+.header-nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/*Navbar*/
+.navbar {
+  background-color: #016E37;
+  color: white;
+  display: flex;
+  position: sticky !important;
+  top: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px !important;
+  z-index: 7;
+}
+
+.navbar-title {
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-links li {
+  margin-left: 10px;
+}
+
+.navbar-links li label {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-links li label:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/*Home*/
+.home-description {
+  padding: 10px;
+  background-color: #EEEEEE;
+}
+
+.home-thirdbox {
+  padding: 50px 35px !important;
+  text-align: center;
+}
+
+.home-side {
+  background-color: #016E37;
+}
+
+.home-middle {
+  background-color: #3BB44B;
+}
+
+.home-thirdbox div h4 {
+  color: #EEEEEE;
+}
+
+.home-thirdbox div Button {
+  width: 80%;
+  margin-top: 25px;
+  font-size: 18px;
+}
+
+.home-text {
+  padding: 25px 25px 0px 15px;
+  font-family: baskerville;
+}
+
+.home-text h4 {
+  margin-top: 20px;
+}
+
+.home-text p {
+  margin-top: 20px;
+  margin-right: 40px;
+  float: right;
+  font-size: 18px;
+}
+
+/*Reviews*/
+.reviews-button {
+  width: 80%;
+  margin-top: 25px;
+  font-size: 18px;
+}
+
+.Reviews {
+  text-align: center;
+}
+
+.reviews-main {
+  display: flex;
+  align-items: center;
+}
+
+.reviews-arrowLeft {
+  margin-left: -50px;
+}
+
+.reviews-arrowRight {
+  margin-left: 26px;
+}
+
+.reviews-arrow:hover {
+  cursor: pointer;
+}
+
+.reviews-reviewer {
+  color: white;
+  float: right;
+  margin-right: 10px;
+}
+
+/*Services*/
+.services-filter {
+  border: 1px solid black;
+  margin-bottom: 15px;
+}
+
+.services-filterItems {
+  margin-left: 15px;
+}
+
+.services-filterGroup {
+  margin-top: 20px;
+}
+
+.services-filterText {
+  margin-top: 20px;
+  font-size: small;
+}
+
+.services-cardContainer {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.services-msgCompare {
+  font-size: small;
+  display: none;
+}
+
+.services-filterTitle div {
+  margin-bottom: 0px;
+  margin-right: 20px;
+}
+
+.services-filterTitle {
+  display: flex;
+  align-items: center;
+}
+
+.services-clearFilters button {
+  font-size: 12px;
+  padding: 4px 8px;
+  float: right;
+}
+
+/*ServiceCard*/
+.serviceCard-main {
+  width: 50% !important;
+  padding: 0px 10px 20px 10px;
+}
+
+.serviceCard-card {
+  cursor: cell;
+}
+
+.serviceCard-button {
+  float: right;
+}
+
+.serviceCard-price {
+  display: inline;
+  flex: 1;
+  margin-left: 10px;
+  padding-top: 50px;
+}
+
+.serviceCard-includes {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.serviceCard-includes ul {
+  width: 80%;
+  height: 85px;
+}
+
+/*Booking*/
+.booking-container {
+  background-color: #EEEEEE;
+  padding: 25px 40px !important;
+}
+
+.booking-personalInfo {
+  padding: 5px 0px 0px 15px;
+  margin-bottom: 45px
+}
+
+.booking-serviceInfo {
+  padding: 20px 0px 0px 15px;
+  margin-bottom: 45px;
+}
+
+.booking-lbl {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.booking-serviceHead {
+  display: flex;
+  align-items: center;
+}
+
+.booking-serviceHead h5 {
+  margin-right: 20px;
+  margin-bottom: 0px;
+}
+
+.booking-btnbook {
+  float: right;
+  padding: 10px 100px !important;
+}
+
+.booking-yardRow {
+  margin-top: 20px !important;
+}
+
+/*Account login*/
+.accountLogin-form {
+  background-color: #016E37;
+  padding: 40px 75px;
+  border-radius: 25px;
+  color: white;
+}
+
+.accountLogin-form h4 {
+  text-align: center;
+}
+
+.accountLogin-form form div {
+  margin-top: 20px;
+}
+
+.accountLogin-button {
+  text-align: center;
+}
+
+.accountLogin-button Button {
+  margin-top: 15px;
+}
+
+/*Account*/
+.account-service {
+  margin-top: 30px;
+}
+
+.account-serviceTable {
+  margin-left: 10px;
+}
+
+.account-chat {
+  margin-top: 40px;
+}
+
+.account-chatbox {
+  margin-left: 10px;
+  margin-top: 10px;
+  background-color: #EEEEEE;
+  height: 300px;
+}
+
+/*Footer*/
+.footer {
+  margin-top: 25px;
+  border-top: 1px solid #6c757d;
+  padding: 15px;
+  display: flex;
+}
+
+.footer-icon {
+  width: 35px;
+  margin-right: 5px;
+}
+
+.footer-item {
+  margin-left: 25px;
+}
+
+.footer-item :hover {
+  cursor: pointer;
+}
+
+.footer-item span {
+  padding-left: 5px;
+}
