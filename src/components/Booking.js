@@ -43,7 +43,7 @@ function Booking() {
       }
     }
     else {
-      document.getElementById('price').innerHTML = 'Enter your adress to get your price';
+      document.getElementById('price').innerHTML = 'Enter your address to get your price';
     }
   };
   const adressValidate = () => {
@@ -141,7 +141,7 @@ function Booking() {
             </Col>
             <Col md={6}>
               <label className='booking-lbl'>Price: </label>
-              <label id='price'>Enter your adress to get your price</label>
+              <label id='price'>Enter your address to get your price</label>
             </Col>
           </Row>
           <Row className='booking-yardRow'>

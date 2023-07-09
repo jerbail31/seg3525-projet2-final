@@ -156,7 +156,7 @@ const MyComponent = () => {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={closeModal}>Close</Button>
-          <Button variant="primary" onClick={handleSubmit}>Submit Review</Button>
+          <Button variant="warning" onClick={handleSubmit}>Submit Review</Button>
         </Modal.Footer>
       </Modal>
     </div>

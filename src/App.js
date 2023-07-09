@@ -9,6 +9,7 @@ import Booking from "./components/Booking.js";
 import Account from "./components/Account.js";
 import AccountLogin from "./components/AccountLogin.js";
 import Footer from "./components/Footer.js";
+import NotFound from "./components/NotFound.js";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/seg3525-projet2-final/Booking" element={<Booking />}/> 
         <Route path="/seg3525-projet2-final/AccountLogin" element={<AccountLogin />}/>
         <Route path="/seg3525-projet2-final/Account" element={<Account />}/>
+        <Route path="*" element={<NotFound />}/>
       </Routes>
       <Footer />
     </div>

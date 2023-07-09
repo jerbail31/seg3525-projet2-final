@@ -33,7 +33,7 @@ function Home() {
                 I'm a local student with a summer grass cutting service.
                 I have four years of lawn mowing experience around the community.
               </h4>
-              <h4>I'm excited to work with new clients</h4>
+              <h4>I'm excited to work with new clients.</h4>
               <p>-Chase</p>
             </div>
           </Col>

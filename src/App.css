@@ -111,14 +111,30 @@
   margin-left: 10px;
 }
 
-.navbar-links li label {
+.navbar-lbl {
   color: white;
   text-decoration: none;
+  margin-right: 10px;
 }
 
-.navbar-links li label:hover {
+.navbar-lbl:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+.navbar-icon{
+  margin-left: 20px!important;
+}
+
+.navbar-icon:hover{
+  cursor: pointer;
+}
+
+.navbar-icon label{
+  padding-left:4px;
+}
+.navbar-icon label:hover{
+  cursor:pointer;
 }
 
 /*Home*/
@@ -283,12 +299,16 @@
 }
 
 .booking-personalInfo {
-  padding: 5px 0px 0px 15px;
+  padding: 0px 0px 0px 15px;
   margin-bottom: 45px
 }
 
+.booking-personalInfo div{
+  margin-top: 10px;
+}
+
 .booking-serviceInfo {
-  padding: 20px 0px 0px 15px;
+  padding: 30px 0px 0px 15px;
   margin-bottom: 45px;
 }
 
