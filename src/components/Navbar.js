@@ -27,7 +27,7 @@ function Navbar() {
     if (path === '/seg3525-projet2-final/Services') {
       document.getElementsByClassName('navbar-services')[0].style.fontWeight = 'bold';
     }
-    else if (path === '/seg3525-projet2-final/Account' || path === '/seg3525-projet2-final/AccountLogin') {
+    else if (path === '/seg3525-projet2-final/Account') {
       document.getElementsByClassName('navbar-account')[0].style.fontWeight = 'bold';
     }
     else if (path === '/seg3525-projet2-final') {

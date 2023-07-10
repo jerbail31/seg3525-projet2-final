@@ -41,7 +41,6 @@
   display: flex;
   justify-content: space-between;
   padding: 5px 30px;
-
 }
 
 .header-left {
@@ -78,6 +77,20 @@
 }
 
 .header-nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.header-signout {
+  color: black;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.header-signout:hover {
+  text-decoration: underline;
+}
+
+.header-lnk:hover {
+  cursor: pointer;
   text-decoration: underline;
 }
 
@@ -122,19 +135,20 @@
   text-decoration: underline;
 }
 
-.navbar-icon{
-  margin-left: 20px!important;
+.navbar-icon {
+  margin-left: 20px !important;
 }
 
-.navbar-icon:hover{
+.navbar-icon:hover {
   cursor: pointer;
 }
 
-.navbar-icon label{
-  padding-left:4px;
+.navbar-icon label {
+  padding-left: 4px;
 }
-.navbar-icon label:hover{
-  cursor:pointer;
+
+.navbar-icon label:hover {
+  cursor: pointer;
 }
 
 /*Home*/
@@ -303,7 +317,7 @@
   margin-bottom: 45px
 }
 
-.booking-personalInfo div{
+.booking-personalInfo div {
   margin-top: 10px;
 }
 
@@ -360,7 +374,44 @@
   margin-top: 15px;
 }
 
+/*Account create*/
+.accountCreate-form {
+  background-color: #3BB44B;
+  padding: 40px 75px;
+  border-radius: 25px;
+  color: white;
+}
+
+.accountCreate-form h4 {
+  text-align: center;
+}
+
+.accountCreate-form form div {
+  margin-top: 20px;
+}
+
+.accountCreate-button {
+  text-align: center;
+}
+
+.accountCreate-button Button {
+  margin-top: 15px;
+}
+
+.accountCreate-Invalid {
+  border-color: red !important;
+}
+
+.accountCreate-Invalid::placeholder {
+  color: red !important;
+}
+
 /*Account*/
+.account-top {
+  display: flex;
+  justify-content: space-between;
+
+}
 .account-service {
   margin-top: 30px;
 }
