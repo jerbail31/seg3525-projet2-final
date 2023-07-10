@@ -376,8 +376,9 @@
 .account-chatbox {
   margin-left: 10px;
   margin-top: 10px;
-  background-color: #EEEEEE;
-  height: 300px;
+  height: 350px;
+  position: relative;
+  z-index: 1;
 }
 
 /*Footer*/

@@ -1,4 +1,6 @@
 import { Container, Table } from 'react-bootstrap';
+import ChatbotComponent from './Chatbot';
+
 
 function Account() {
   return (
@@ -37,7 +39,7 @@ function Account() {
         <div className='account-chat'>
           <h5>Chat with us</h5>
           <div className='account-chatbox'>
-            Chat window
+            <ChatbotComponent />
           </div>
         </div>
       </Container>
