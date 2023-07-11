@@ -52,7 +52,7 @@ function AccountLogin() {
 
     //for logged in users
     useEffect(() => {
-        if(localStorage.getItem('AccountName') !== ''){
+        if(localStorage.getItem('AccountName') !== '' && localStorage.getItem('AccountName') !== null){
             navigate('/seg3525-projet2-final/Account');
         }
         

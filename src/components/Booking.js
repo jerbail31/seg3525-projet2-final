@@ -121,7 +121,7 @@ function Booking() {
   };
 
   const addLoggedInInfo = () => {
-    if (localStorage.getItem('AccountName') !== '') {
+    if (localStorage.getItem('AccountName') !== '' && localStorage.getItem('AccountName') !== null) {
       document.getElementById('name').value = localStorage.getItem('AccountName');
       document.getElementById('email').value = localStorage.getItem('AccountEmail');
       document.getElementById('phone').value = localStorage.getItem('AccountPhone');
