@@ -26,7 +26,7 @@ function Header() {
 
   const name = localStorage.getItem('AccountName');
   var rawHTML;
-  if (!(name === '')) {
+  if (!((name === '') || (name=== null))) {
     rawHTML = (
       <div>
         <span onClick={signOut} className='header-signout'>sign out</span>

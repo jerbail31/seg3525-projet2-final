@@ -4,10 +4,16 @@ import { useNavigate } from 'react-router-dom';
 
 function SignUp() {
 
+    var path = '/seg3525-projet2-final/Account';
+    if (localStorage.getItem('fromPage') !== null) {
+        path = ('/seg3525-projet2-final/' + localStorage.getItem('fromPage'));
+        localStorage.removeItem('fromPage', '');
+    }
+
     const navigate = useNavigate();
     const CreateClick = () => {
-        
-        if(!validate()){
+
+        if (!validate()) {
             return;
         }
 
@@ -16,7 +22,7 @@ function SignUp() {
         localStorage.setItem('AccountPhone', document.getElementById('formBasicPhone').value);
         localStorage.setItem('AccountAddress', document.getElementById('formBasicAddress').value);
         localStorage.setItem('AccountPostal', document.getElementById('formBasicPostal').value);
-        navigate('/seg3525-projet2-final/Account');
+        navigate(path);
     };
 
     const validate = () => {
@@ -78,6 +84,11 @@ function SignUp() {
         return valid;
 
     };
+
+    const login = () => {
+        localStorage.setItem('fromPage', path.replace('/seg3525-projet2-final/', ''));
+        navigate('/seg3525-projet2-final/AccountLogin');
+    }
     return (
         <div className="accountCreate">
             <Container>
@@ -85,6 +96,9 @@ function SignUp() {
                     <Col md={3}></Col>
                     <Col>
                         <div className='accountCreate-form'>
+                            <div className='accountLoginCreate-other'>
+                                <span onClick={login}>Already have an account? Login</span>
+                            </div>
                             <h4>Create an account</h4>
                             <Form>
                                 <Form.Group controlId="formBasicName">

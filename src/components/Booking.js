@@ -17,17 +17,72 @@ function Booking() {
     setShow(false);
     navigate('/seg3525-projet2-final');
   };
-  const handleShow = () => {
-    //add validation
-
-    setShow(true);
-  };
   const handleMyAccount = () => {
     navigate('/seg3525-projet2-final/Account');
   };
 
+  const book = () => {
+    if (!validate()) {
+      return;
+    }
+
+    //show confirm modal
+    setShow(true);
+  }
+
+  const validate = () => {
+    var valid = true;
+
+    const AccountName = document.getElementById('name');
+    if (AccountName.value === '') {
+      valid = false;
+      AccountName.classList.add('accountCreate-Invalid');
+    }
+    else {
+      AccountName.classList.remove('accountCreate-Invalid');
+    }
+
+    const AccountEmail = document.getElementById('email');
+    if (AccountEmail.value === '') {
+      valid = false;
+      AccountEmail.classList.add('accountCreate-Invalid');
+    }
+    else {
+      AccountEmail.classList.remove('accountCreate-Invalid');
+    }
+
+    const AccountPhone = document.getElementById('phone');
+    if (AccountPhone.value === '') {
+      valid = false;
+      AccountPhone.classList.add('accountCreate-Invalid');
+    }
+    else {
+      AccountPhone.classList.remove('accountCreate-Invalid');
+    }
+
+    const AccountAddress = document.getElementById('address');
+    if (AccountAddress.value === '') {
+      valid = false;
+      AccountAddress.classList.add('accountCreate-Invalid');
+    }
+    else {
+      AccountAddress.classList.remove('accountCreate-Invalid');
+    }
+
+    const AccountPostal = document.getElementById('postal');
+    if (AccountPostal.value === '') {
+      valid = false;
+      AccountPostal.classList.add('accountCreate-Invalid');
+    }
+    else {
+      AccountPostal.classList.remove('accountCreate-Invalid');
+    }
+
+    return valid;
+  };
+
   const setPrice = () => {
-    if (adressIsValid()) {
+    if (addressIsValid()) {
       if (selectedYard === 'full') {
         document.getElementById('price').innerHTML = localStorage.getItem('selectedServicePrice');
       }
@@ -46,11 +101,13 @@ function Booking() {
       document.getElementById('price').innerHTML = 'Enter your address to get your price';
     }
   };
-  const adressValidate = () => {
+  const addressValidate = () => {
+    //validate address here
+
     setPrice();
   };
-  const adressIsValid = () => {
-    if (document.getElementById('adress').value === '') {
+  const addressIsValid = () => {
+    if (document.getElementById('address').value === '') {
       return false;
     }
 
@@ -63,9 +120,34 @@ function Booking() {
     setSelectedYard(event.target.value);
   };
 
+  const addLoggedInInfo = () => {
+    if (localStorage.getItem('AccountName') !== '') {
+      document.getElementById('name').value = localStorage.getItem('AccountName');
+      document.getElementById('email').value = localStorage.getItem('AccountEmail');
+      document.getElementById('phone').value = localStorage.getItem('AccountPhone');
+      document.getElementById('address').value = localStorage.getItem('AccountAddress');
+      document.getElementById('postal').value = localStorage.getItem('AccountPostal');
+
+      document.getElementById('personalInfoAccount').style.display = 'none';
+
+      setPrice();
+    }
+  }
+
   useEffect(() => {
     setPrice();
+    addLoggedInInfo();
   });
+
+  const accountClick = () => {
+    localStorage.setItem('fromPage', 'Booking');
+    navigate('/seg3525-projet2-final/AccountLogin');
+  }
+
+  const signUp = () => {
+    localStorage.setItem('fromPage', 'Booking');
+    navigate('/seg3525-projet2-final/SignUp');
+  }
 
   //service select
   const service = localStorage.getItem('selectedService');
@@ -73,7 +155,13 @@ function Booking() {
   return (
     <div className="booking">
       <Container className='booking-container'>
-        <h5>Personal Information</h5>
+        <div className='booking-presonalTitle'>
+          <h5 style={{ marginBottom: '0' }}>Personal Information</h5>
+          <div id='personalInfoAccount' className='booking-personalInfoAccount'>
+            <span style={{ float: 'right' }} onClick={accountClick}>You have an account? Login here</span>
+            <span onClick={signUp}>Don't have an account? Sign up here</span>
+          </div>
+        </div>
         <div className='booking-personalInfo'>
           <Row>
             <Col md={3}>
@@ -120,8 +208,8 @@ function Booking() {
                 <Form.Control
                   type="text"
                   placeholder='100 Innes road'
-                  id='adress'
-                  onChange={adressValidate}
+                  id='address'
+                  onChange={addressValidate}
                 />
               </Form.Group>
             </Col>
@@ -145,49 +233,49 @@ function Booking() {
             </Col>
           </Row>
           <Row className='booking-yardRow'>
-              <Col md={1}>
-                <label className='booking-lbl'>Yard: </label>
-              </Col>
-              <Col>
-                <Form>
-                  <div>
-                    <Form.Check
-                      inline
-                      type="radio"
-                      label="Full yard"
-                      name="Yards"
-                      value="full"
-                      checked={selectedYard === "full"}
-                      onChange={handleYardChange}
-                    />
+            <Col md={1}>
+              <label className='booking-lbl'>Yard: </label>
+            </Col>
+            <Col>
+              <Form>
+                <div>
+                  <Form.Check
+                    inline
+                    type="radio"
+                    label="Full yard"
+                    name="Yards"
+                    value="full"
+                    checked={selectedYard === "full"}
+                    onChange={handleYardChange}
+                  />
 
-                    <Form.Check
-                      inline
-                      type="radio"
-                      label="Front yard only"
-                      name="Yards"
-                      value="front"
-                      checked={selectedYard === "front"}
-                      onChange={handleYardChange}
-                    />
+                  <Form.Check
+                    inline
+                    type="radio"
+                    label="Front yard only"
+                    name="Yards"
+                    value="front"
+                    checked={selectedYard === "front"}
+                    onChange={handleYardChange}
+                  />
 
-                    <Form.Check
-                      inline
-                      type="radio"
-                      label="Backyard only"
-                      name="Yards"
-                      value="back"
-                      checked={selectedYard === "back"}
-                      onChange={handleYardChange}
-                    />
-                  </div>
-                </Form>
-              </Col>
+                  <Form.Check
+                    inline
+                    type="radio"
+                    label="Backyard only"
+                    name="Yards"
+                    value="back"
+                    checked={selectedYard === "back"}
+                    onChange={handleYardChange}
+                  />
+                </div>
+              </Form>
+            </Col>
           </Row>
         </div>
         <Row>
           <Col>
-            <Button className='booking-btnbook' variant="success" onClick={handleShow}>
+            <Button className='booking-btnbook' variant="success" onClick={book}>
               Book service
             </Button>
           </Col>

@@ -1,14 +1,67 @@
 import { Button, Form, Container, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+
 
 
 function AccountLogin() {
+    
+    var path = '/seg3525-projet2-final/Account';
+    if(localStorage.getItem('fromPage') !== null){
+        path = ('/seg3525-projet2-final/' + localStorage.getItem('fromPage'));
+        localStorage.removeItem('fromPage', '');
+    }
 
     const navigate = useNavigate();
     const loginClick = () => {
-        //add validation
-        navigate('/seg3525-projet2-final/Account');
+        if (!validate()) {
+            return;
+        }
+
+        localStorage.setItem('AccountName', 'user1');
+        localStorage.setItem('AccountEmail', 'user1@email.com');
+        localStorage.setItem('AccountPhone', '613-123-4567');
+        localStorage.setItem('AccountAddress', '123 Place');
+        localStorage.setItem('AccountPostal', 'A0A 0A0');
+        navigate(path)
     };
+
+    const validate = () => {
+        var valid = true;
+
+        const email = document.getElementById('formBasicEmail');
+        if (email.value !== 'user@email.ca') {
+            valid = false;
+            email.classList.add('accountCreate-Invalid');
+        }
+        else {
+            email.classList.remove('accountCreate-Invalid');
+        }
+
+        const password = document.getElementById('formBasicPassword');
+        if (password.value !== 'user123') { 
+            valid = false;
+            password.classList.add('accountCreate-Invalid');
+        }
+        else {
+            password.classList.remove('accountCreate-Invalid');
+        }
+
+        return valid;
+    }
+
+    //for logged in users
+    useEffect(() => {
+        if(localStorage.getItem('AccountName') !== ''){
+            navigate('/seg3525-projet2-final/Account');
+        }
+        
+    });
+
+    const signUp = () => {
+        localStorage.setItem('fromPage', path.replace('/seg3525-projet2-final/', ''));
+        navigate('/seg3525-projet2-final/SignUp');
+    }
 
     return (
         <div className="accountLogin">
@@ -16,7 +69,10 @@ function AccountLogin() {
                 <Row>
                     <Col md={3}></Col>
                     <Col>
-                        <div className='accountLogin-form'>
+                        <div className='accountLogin-form'>    
+                            <div className='accountLoginCreate-other'>
+                                <span onClick={signUp}>Don't have an account? Sign up</span>
+                            </div>
                             <h4>Login to your account</h4>
                             <Form>
                                 <Form.Group controlId="formBasicEmail">
