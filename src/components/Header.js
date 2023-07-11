@@ -30,7 +30,7 @@ function Header() {
     rawHTML = (
       <div>
         <span onClick={signOut} className='header-signout'>sign out</span>
-        <span>Welcome </span>
+        <span>Signed in as </span>
         <span className='header-lnk' onClick={accountClick} style={{ textDecoration: 'underline' }}>{name}</span>
       </div>
     );
