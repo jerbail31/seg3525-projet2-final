@@ -33,6 +33,7 @@ function AccountLogin() {
         if (email.value !== 'user@email.ca') {
             valid = false;
             email.classList.add('accountCreate-Invalid');
+            email.placeholder = "Enter 'user@email.ca'"
         }
         else {
             email.classList.remove('accountCreate-Invalid');
@@ -42,6 +43,7 @@ function AccountLogin() {
         if (password.value !== 'user123') { 
             valid = false;
             password.classList.add('accountCreate-Invalid');
+            password.placeholder = "Enter 'user123'"
         }
         else {
             password.classList.remove('accountCreate-Invalid');
