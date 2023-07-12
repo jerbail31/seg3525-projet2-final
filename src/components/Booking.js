@@ -7,7 +7,7 @@ function Booking() {
   const navigate = useNavigate();
 
   const navServices = () => {
-    navigate('/seg3525-projet2-final/Services');
+    navigate('/Services');
   };
 
   //for modal
@@ -15,10 +15,10 @@ function Booking() {
 
   const handleClose = () => {
     setShow(false);
-    navigate('/seg3525-projet2-final');
+    navigate('/');
   };
   const handleMyAccount = () => {
-    navigate('/seg3525-projet2-final/Account');
+    navigate('/Account');
   };
 
   const book = () => {
@@ -141,12 +141,12 @@ function Booking() {
 
   const accountClick = () => {
     localStorage.setItem('fromPage', 'Booking');
-    navigate('/seg3525-projet2-final/AccountLogin');
+    navigate('/AccountLogin');
   }
 
   const signUp = () => {
     localStorage.setItem('fromPage', 'Booking');
-    navigate('/seg3525-projet2-final/SignUp');
+    navigate('/SignUp');
   }
 
   //service select

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 function NotFound() {
     const navigate = useNavigate();
     const homeClick = () => {
-        navigate('/seg3525-projet2-final');
+        navigate('/');
     }
 
     return (

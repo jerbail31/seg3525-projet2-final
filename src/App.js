@@ -22,12 +22,12 @@ function App() {
       <Navbar />
       <br/>
       <Routes>
-        <Route exact path="/seg3525-projet2-final" element={<Home />}/>
-        <Route path="/seg3525-projet2-final/Services" element={<Services />}/>
-        <Route path="/seg3525-projet2-final/Booking" element={<Booking />}/> 
-        <Route path="/seg3525-projet2-final/AccountLogin" element={<AccountLogin />}/>
-        <Route path="/seg3525-projet2-final/Account" element={<Account />}/>
-        <Route path="/seg3525-projet2-final/SignUp" element={<SignUp />}/>
+        <Route exact path="" element={<Home />}/>
+        <Route path="/Services" element={<Services />}/>
+        <Route path="/Booking" element={<Booking />}/> 
+        <Route path="/AccountLogin" element={<AccountLogin />}/>
+        <Route path="/Account" element={<Account />}/>
+        <Route path="/SignUp" element={<SignUp />}/>
         <Route path="*" element={<NotFound />}/>
       </Routes>
       <Footer />

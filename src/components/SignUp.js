@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom';
 
 function SignUp() {
 
-    var path = '/seg3525-projet2-final/Account';
+    var path = '/Account';
     if (localStorage.getItem('fromPage') !== null) {
-        path = ('/seg3525-projet2-final/' + localStorage.getItem('fromPage'));
+        path = ('/' + localStorage.getItem('fromPage'));
         localStorage.removeItem('fromPage', '');
     }
 
@@ -86,8 +86,8 @@ function SignUp() {
     };
 
     const login = () => {
-        localStorage.setItem('fromPage', path.replace('/seg3525-projet2-final/', ''));
-        navigate('/seg3525-projet2-final/AccountLogin');
+        localStorage.setItem('fromPage', path.replace('/', ''));
+        navigate('/AccountLogin');
     }
     return (
         <div className="accountCreate">

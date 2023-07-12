@@ -7,11 +7,11 @@ function Home() {
 
   const navigate = useNavigate();
   const navigateToAccount = () => {
-    navigate('/seg3525-projet2-final/AccountLogin');
+    navigate('/AccountLogin');
   };
 
   const navigateToServices = () => {
-    navigate('/seg3525-projet2-final/Services');
+    navigate('/Services');
   };
 
 

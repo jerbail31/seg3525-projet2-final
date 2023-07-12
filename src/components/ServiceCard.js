@@ -76,7 +76,7 @@ const CustomButton = ({ id, title, includes, price, times }) => {
   const book = () => {
     localStorage.setItem('selectedService', title);
     localStorage.setItem('selectedServicePrice', price);
-    navigate('/seg3525-projet2-final/Booking');
+    navigate('/Booking');
   };
 
   const priceLabel = word.median + price;

@@ -10,7 +10,7 @@ function Account() {
     localStorage.setItem('AccountPhone', '');
     localStorage.setItem('AccountAddress', '');
     localStorage.setItem('AccountPostal', '');
-    navigate('/seg3525-projet2-final');
+    navigate('/');
   }
 
   return (

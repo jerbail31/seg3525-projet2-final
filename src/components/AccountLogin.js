@@ -6,9 +6,9 @@ import React, { useEffect } from 'react';
 
 function AccountLogin() {
     
-    var path = '/seg3525-projet2-final/Account';
+    var path = '/Account';
     if(localStorage.getItem('fromPage') !== null){
-        path = ('/seg3525-projet2-final/' + localStorage.getItem('fromPage'));
+        path = ('/' + localStorage.getItem('fromPage'));
         localStorage.removeItem('fromPage', '');
     }
 
@@ -53,14 +53,14 @@ function AccountLogin() {
     //for logged in users
     useEffect(() => {
         if(localStorage.getItem('AccountName') !== '' && localStorage.getItem('AccountName') !== null){
-            navigate('/seg3525-projet2-final/Account');
+            navigate('/Account');
         }
         
     });
 
     const signUp = () => {
-        localStorage.setItem('fromPage', path.replace('/seg3525-projet2-final/', ''));
-        navigate('/seg3525-projet2-final/SignUp');
+        localStorage.setItem('fromPage', path.replace('/', ''));
+        navigate('/SignUp');
     }
 
     return (

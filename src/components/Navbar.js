@@ -30,13 +30,13 @@ function Navbar() {
   const navigate = useNavigate();
 
   const homeClick = () => {
-    navigate('/seg3525-projet2-final');
+    navigate('/');
   }
   const serviceClick = () => {
-    navigate('/seg3525-projet2-final/Services');
+    navigate('/Services');
   }
   const accountClick = () => {
-    navigate('/seg3525-projet2-final/AccountLogin');
+    navigate('/AccountLogin');
   }
 
   /*Bold current page lbl*/
@@ -47,13 +47,13 @@ function Navbar() {
     document.getElementsByClassName('navbar-account')[0].style.fontWeight = '';
     document.getElementsByClassName('navbar-home')[0].style.fontWeight = '';
 
-    if (path === '/seg3525-projet2-final/Services') {
+    if (path === '/Services') {
       document.getElementsByClassName('navbar-services')[0].style.fontWeight = 'bold';
     }
-    else if (path === '/seg3525-projet2-final/Account') {
+    else if (path === '/Account') {
       document.getElementsByClassName('navbar-account')[0].style.fontWeight = 'bold';
     }
-    else if (path === '/seg3525-projet2-final' || path === '/seg3525-projet2-final/') {
+    else if (path === '/' || path === '') {
       document.getElementsByClassName('navbar-home')[0].style.fontWeight = 'bold';
     }
   });

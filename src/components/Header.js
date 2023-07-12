@@ -26,13 +26,13 @@ function Header() {
   //account features
   const navigate = useNavigate();
   const accountClick = () => {
-    navigate('/seg3525-projet2-final/Account');
+    navigate('/Account');
   }
   const login = () => {
-    navigate('/seg3525-projet2-final/AccountLogin');
+    navigate('/AccountLogin');
   }
   const signUp = () => {
-    navigate('/seg3525-projet2-final/SignUp');
+    navigate('/SignUp');
   }
 
   const name = localStorage.getItem('AccountName');
