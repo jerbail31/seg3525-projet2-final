@@ -99,13 +99,13 @@ const MyComponent = () => {
         <Row>
           <div className='reviews-main'>
             <Col md={1}>
-              <FaArrowLeft className='reviews-arrowLeft reviews-arrow' onClick={handlePreviousPage} size={24}></FaArrowLeft>
+              <FaArrowLeft role='button' aria-label='previous review' className='reviews-arrowLeft reviews-arrow' onClick={handlePreviousPage} size={24}></FaArrowLeft>
             </Col>
             <Col md={10}>
               <h4 id='review'>Review</h4>
             </Col>
             <Col md={1}>
-              <FaArrowRight className='reviews-arrowRight reviews-arrow' onClick={handleNextPage} size={24}></FaArrowRight>
+              <FaArrowRight role='button' aria-label='next review' className='reviews-arrowRight reviews-arrow' onClick={handleNextPage} size={24}></FaArrowRight>
             </Col>
           </div>
         </Row>

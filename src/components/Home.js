@@ -21,7 +21,7 @@ function Home() {
         <Row>
           <Col md={6}>
             {/* Image */}
-            <img src={cart} alt="cart" />
+            <img src={cart} alt="company cart" />
           </Col>
           <Col md={6}>
             {/* Content */}
