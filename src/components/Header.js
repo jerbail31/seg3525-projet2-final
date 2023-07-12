@@ -7,12 +7,14 @@ function Header() {
   const fr = {
     signed:'Connecté sous ',
     login:'Se connecter',
-    signup:"S'enregistrer"
+    signup:"S'enregistrer",
+    signout:'Se déconnecter'
   };
   const en = {
     signed:'Logged in as ',
     login:'Login',
-    signup:'Sign Up'
+    signup:'Sign Up',
+    signout:'Logout'
   };
   var word;
   if(localStorage.getItem('lang') === 'FR'){
@@ -35,13 +37,25 @@ function Header() {
     navigate('/SignUp');
   }
 
+  const signOut = () => {
+    localStorage.setItem('AccountName', '');
+    localStorage.setItem('AccountEmail', '');
+    localStorage.setItem('AccountPhone', '');
+    localStorage.setItem('AccountAddress', '');
+    localStorage.setItem('AccountPostal', '');
+    navigate('/');
+  }
+
   const name = localStorage.getItem('AccountName');
   var rawHTML;
   if (!((name === '') || (name=== null))) {
     rawHTML = (
       <div>
         <span>{word.signed}</span>
-        <span className='header-lnk' onClick={accountClick} style={{ textDecoration: 'underline' }}>{name}</span>
+        <span className='header-lnk' onClick={accountClick} style={{ fontWeight: 'bold' }}>{name}</span>
+        <span style={{marginLeft:'10px'}}>(</span>
+        <span className='header-lnk' onClick={signOut}>{word.signout}</span>
+        <span>)</span>
       </div>
     );
   }
