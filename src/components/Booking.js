@@ -154,7 +154,11 @@ function Booking() {
 
   return (
     <div className="booking">
-      <Container className='booking-container'>
+      <Container>
+        <div className='title'>
+          <h1>Book a Service</h1>
+        </div>
+        <div className='booking-container'>
         <div className='booking-presonalTitle'>
           <h5 style={{ marginBottom: '0' }}>Personal Information</h5>
           <div id='personalInfoAccount' className='booking-personalInfoAccount'>
@@ -217,7 +221,7 @@ function Booking() {
         </div>
         <div className='booking-serviceHead'>
           <h5>Service Information</h5>
-          <Button variant='success' onClick={navServices} style={{ backgroundColor: '#3BB44B' }}>
+          <Button variant='warning' onClick={navServices}>
             Choose a different service
           </Button>
         </div>
@@ -280,6 +284,7 @@ function Booking() {
             </Button>
           </Col>
         </Row>
+        </div>
       </Container>
 
       {/*Modal*/}

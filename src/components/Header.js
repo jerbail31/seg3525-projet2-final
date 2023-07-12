@@ -3,6 +3,26 @@ import { useNavigate } from 'react-router-dom';
 
 
 function Header() {
+  //translation
+  const fr = {
+    signed:'Connecté sous ',
+    login:'Se connecter',
+    signup:"S'enregistrer"
+  };
+  const en = {
+    signed:'Logged in as ',
+    login:'Login',
+    signup:'Sign Up'
+  };
+  var word;
+  if(localStorage.getItem('lang') === 'FR'){
+    word = fr;
+  }
+  else{
+    word = en;
+  }
+
+
   //account features
   const navigate = useNavigate();
   const accountClick = () => {
@@ -15,22 +35,12 @@ function Header() {
     navigate('/seg3525-projet2-final/SignUp');
   }
 
-  const signOut = () => {
-    localStorage.setItem('AccountName', '');
-    localStorage.setItem('AccountEmail', '');
-    localStorage.setItem('AccountPhone', '');
-    localStorage.setItem('AccountAddress', '');
-    localStorage.setItem('AccountPostal', '');
-    navigate('/seg3525-projet2-final');
-  }
-
   const name = localStorage.getItem('AccountName');
   var rawHTML;
   if (!((name === '') || (name=== null))) {
     rawHTML = (
       <div>
-        <span onClick={signOut} className='header-signout'>sign out</span>
-        <span>Signed in as </span>
+        <span>{word.signed}</span>
         <span className='header-lnk' onClick={accountClick} style={{ textDecoration: 'underline' }}>{name}</span>
       </div>
     );
@@ -38,9 +48,9 @@ function Header() {
   else {
     rawHTML = (
       <div>
-        <span className='header-lnk' onClick={login}>Login</span>
-        <span>/</span>
-        <span className='header-lnk' onClick={signUp}>Sign up</span>
+        <span className='header-lnk' onClick={login}>{word.login}</span>
+        <span> / </span>
+        <span className='header-lnk' onClick={signUp}>{word.signup}</span>
       </div>
     );
   }

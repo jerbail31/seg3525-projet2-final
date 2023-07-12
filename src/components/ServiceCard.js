@@ -2,20 +2,63 @@ import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-const CustomButton = ({ id, title, includes, price }) => {
+const CustomButton = ({ id, title, includes, price, times }) => {
+
+  //translation
+  const fr = {
+    book:'Réserver',
+    median:'Prix médian : ',
+    includes:'Le service inclus : ',
+    grass:'Pelouse',
+    grassF:' (Chaque 2 semaines)',
+    trim:'Taille',
+    trimF:' (Chaque mois)',
+    leaf:'Ramassage de feuilles (10 sacs)',
+    aeration:'Aération (printemps ou automne)',
+  };
+  const en = {
+    book:'Book',
+    median:'Median Price: ',
+    includes:'The Service Includes: ',
+    grass:'Grass',
+    grassF:' (Biweekly)',
+    trim:'Trimming',
+    trimF:' (Monthly)',
+    leaf:'Leaf Raking (10 bags)',
+    aeration:'Aeration',
+  };
+  var word;
+  if (localStorage.getItem('lang') === 'FR') {
+    word = fr;
+  }
+  else {
+    word = en;
+  }
+  //end of translation
+
   var includeObject = [];
-  if (includes[0] === true) {
-    includeObject.push('Grass (Biweekly)');
-  };
-  if (includes[1] === true) {
-    includeObject.push('Trimming (Monthly)');
-  };
+  if(times === 'season'){
+    if (includes[0] === true) {
+      includeObject.push(word.grass + word.grassF);
+    };
+    if (includes[1] === true) {
+      includeObject.push(word.trim + word.trimF);
+    };
+  }
+  else if(times === 'one'){
+    if (includes[0] === true) {
+      includeObject.push(word.grass);
+    };
+    if (includes[1] === true) {
+      includeObject.push(word.trim);
+    };
+  }
   if (includes[2] === true) {
-    includeObject.push('Leaf Raking (10 bags)');
+    includeObject.push(word.leaf);
   };
   if (includes[3] === true) {
-    includeObject.push('Aeration (Spring or Fall)');
-  };
+    includeObject.push(word.aeration);
+  }
 
   const cardClick = () => {
     var card = document.getElementById(id).firstChild;
@@ -36,14 +79,14 @@ const CustomButton = ({ id, title, includes, price }) => {
     navigate('/seg3525-projet2-final/Booking');
   };
 
-  const priceLabel = 'Median Price: ' + price;
+  const priceLabel = word.median + price;
   return (
     <div id={id} className="serviceCard-main">
       <Card className='serviceCard-card' onClick={cardClick}>
         <Card.Body>
           <Card.Title>{title}</Card.Title>
           <div className='serviceCard-includes'>
-            <Card.Subtitle>Service includes:</Card.Subtitle>
+            <Card.Subtitle>{word.includes}</Card.Subtitle>
             <ul>
               {includeObject.map((item, index) => (
                 <li key={index}>{item}</li>
@@ -51,7 +94,7 @@ const CustomButton = ({ id, title, includes, price }) => {
             </ul>
           </div>
           <Card.Subtitle className='serviceCard-price'>{priceLabel} </Card.Subtitle>
-          <Button variant='success' className='serviceCard-button' onClick={book}> Book </Button>
+          <Button variant='success' className='serviceCard-button' onClick={book}> {word.book} </Button>
         </Card.Body>
       </Card>
     </div>

@@ -34,6 +34,10 @@
   }
 }
 
+.title {
+  padding-bottom: 15px;;
+}
+
 /*Header*/
 .header {
   background-color: #3BB44B;
@@ -407,7 +411,7 @@
 .accountLoginCreate-other {
   display: flow-root;
   margin-bottom: 20px;
-  margin-top:-25px;
+  margin-top: -25px;
   margin-right: -45px;
 }
 

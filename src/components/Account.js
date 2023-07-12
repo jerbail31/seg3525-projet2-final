@@ -17,7 +17,7 @@ function Account() {
     <div className="account">
       <Container>
         <div className='account-top'>
-          <h3>Hi {localStorage.getItem('AccountName')}</h3>
+          <h2>Hello {localStorage.getItem('AccountName')}</h2>
           <Button variant='warning' onClick={signOut}>Sign out</Button>
         </div>
         <div className='account-service'>
